@@ -1,0 +1,11 @@
+name: Lint Kotlin
+on: push
+jobs:
+    lint:
+        name: Run Kotlinter
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+            - name: Run lintKotlin Gradle script
+              run: ./gradlew lintKotlin
