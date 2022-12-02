@@ -8,14 +8,14 @@ fun main() {
 }
 
 fun part1() {
-    val input = readInput("day01", "Day01")
+    val input = readInput(1)
     val elves = mutableListOf(0)
     input.forEach { if (it == "") elves += 0 else elves[elves.size - 1] += it.toInt() }
     println(elves.max())
 }
 
 fun part2() {
-    val input = readInput("day01", "Day01")
+    val input = readInput(1)
     val elves = mutableListOf(0)
     input.forEach { if (it == "") elves += 0 else elves[elves.size - 1] += it.toInt() }
     elves.sortDescending()
