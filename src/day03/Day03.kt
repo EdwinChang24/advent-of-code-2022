@@ -13,7 +13,7 @@ fun part1() {
     for (string in input) {
         val first = string.subSequence(0, string.length / 2)
         val second = string.subSequence(string.length / 2, string.length)
-        val intersect = first.toSet().intersect(second.toSet())
+        val intersect = first.toSet() intersect second.toSet()
         for (char in intersect) total += if (char.isLowerCase()) char - 'a' + 1 else char - 'A' + 27
     }
     println(total)
@@ -30,7 +30,7 @@ fun part2() {
         }
     }
     for (i in processed) {
-        val intersect = i[0].toSet().intersect(i[1].toSet().intersect(i[2].toSet()))
+        val intersect = i[0].toSet() intersect i[1].toSet() intersect i[2].toSet()
         for (c in intersect) total += if (c.isLowerCase()) c - 'a' + 1 else c - 'A' + 27
     }
     println(total)
