@@ -8,16 +8,14 @@ fun main() {
 }
 
 fun part1() = common { input, stacks ->
-    for (line in input) {
-        if (!line.startsWith("move")) continue
+    for (line in input) if (line.startsWith("move")) {
         val asList = line.removePrefix("move ").split(" from ", " to ").map { it.toInt() }
         repeat(asList[0]) { stacks[asList[2] - 1] += stacks[asList[1] - 1].removeLast() }
     }
 }
 
 fun part2() = common { input, stacks ->
-    for (line in input) {
-        if (!line.startsWith("move")) continue
+    for (line in input) if (line.startsWith("move")) {
         val asList = line.removePrefix("move ").split(" from ", " to ").map { it.toInt() }
         val popped = mutableListOf<Char>()
         repeat(asList[0]) { popped += stacks[asList[1] - 1].removeLast() }
