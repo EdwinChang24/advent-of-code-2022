@@ -61,19 +61,10 @@ fun part2() {
     var total = 0
     for ((rowIndex, row) in grid.withIndex()) {
         for ((index, height) in row.withIndex()) {
-            val product = (index to rowIndex - 1).score(
-                Direction.UP,
-                height,
-                false
-            ) * (index to rowIndex + 1).score(
-                Direction.DOWN,
-                height,
-                false
-            ) * (index - 1 to rowIndex).score(
-                Direction.LEFT,
-                height,
-                false
-            ) * (index + 1 to rowIndex).score(Direction.RIGHT, height, false)
+            val product = (index to rowIndex - 1).score(Direction.UP, height, false) *
+                (index to rowIndex + 1).score(Direction.DOWN, height, false) *
+                (index - 1 to rowIndex).score(Direction.LEFT, height, false) *
+                (index + 1 to rowIndex).score(Direction.RIGHT, height, false)
             total = maxOf(total, product)
         }
     }
